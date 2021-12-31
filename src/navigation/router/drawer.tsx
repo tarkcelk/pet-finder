@@ -23,21 +23,6 @@ const DrawerNavigator = () => {
     <Drawer.Navigator
       initialRouteName={SCREENS.HOME}
       screenOptions={getOptions()}>
-      {isSignedIn ? (
-        <Drawer.Screen
-          key={`drawerKey-${getDrawerKeyCounter()}`}
-          name={SCREENS.PROFILE}
-          component={ProfileStackNavigator}
-          options={getOptionsByPage(Pages.Profile)}
-        />
-      ) : (
-        <Drawer.Screen
-          key={`drawerKey-${getDrawerKeyCounter()}`}
-          name={SCREENS.AUTH}
-          component={AuthStackNavigator}
-          options={getOptionsByPage(Pages.SignIn)}
-        />
-      )}
       <Drawer.Screen
         key={`drawerKey-${getDrawerKeyCounter()}`}
         name={SCREENS.HOME}
@@ -59,6 +44,21 @@ const DrawerNavigator = () => {
             options={getOptionsByPage(Pages.Favorites)}
           />
         </>
+      )}
+      {isSignedIn ? (
+        <Drawer.Screen
+          key={`drawerKey-${getDrawerKeyCounter()}`}
+          name={SCREENS.PROFILE}
+          component={ProfileStackNavigator}
+          options={getOptionsByPage(Pages.Profile)}
+        />
+      ) : (
+        <Drawer.Screen
+          key={`drawerKey-${getDrawerKeyCounter()}`}
+          name={SCREENS.AUTH}
+          component={AuthStackNavigator}
+          options={getOptionsByPage(Pages.SignIn)}
+        />
       )}
     </Drawer.Navigator>
   );

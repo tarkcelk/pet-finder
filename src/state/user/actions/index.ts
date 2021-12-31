@@ -9,14 +9,12 @@ import {
   FETCH_CITIES_REJECTED,
   CREATE_USER_FULFILLED,
   CREATE_USER_REJECTED,
+  CREATE_USER_ENDED,
 } from '../constants';
 import {User} from 'types/entity';
 import {ApiResponse, ApiError} from 'types/api';
 import {ThunkDispatch} from 'redux-thunk';
 import {AnyAction} from 'redux';
-import {navigate} from 'utils/navigation';
-import {SCREENS} from 'consts';
-import {showAlert} from 'utils/app/alert';
 
 export const fulfilled = (data: User) => ({
   type: FETCH_USER_FULFILLED,
@@ -44,6 +42,10 @@ export const pending = () => ({
 
 export const logout = () => ({
   type: LOGOUT,
+});
+
+export const createUserEnded = () => ({
+  type: CREATE_USER_ENDED,
 });
 
 export const fetchCities =
@@ -81,7 +83,6 @@ export const login =
     })
       .then((response: ApiResponse) => {
         dispatch(fulfilled(<User>response.data));
-        navigate(SCREENS.HOME);
       })
       .catch((error: ApiError) => dispatch(rejected(error)));
   };
@@ -95,15 +96,6 @@ export const createUser =
       data: user,
     })
       .then((response: ApiResponse) => {
-        showAlert(
-          'Başarılı',
-          `Kullanıcı kaydınız başarılı bir şekilde yapılmıştır , lütfen giriş yapınız.`,
-          {
-            onPress: () => navigate(SCREENS.SIGN_IN),
-            text: 'Tamam',
-          },
-        );
-
         dispatch(createUserFulfilled(<User>response.data));
       })
       .catch((error: ApiError) => dispatch(createUserRejected(error)));

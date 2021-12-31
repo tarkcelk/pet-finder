@@ -16,18 +16,21 @@ import {$PS_SignIn} from 'style/pages';
 import {PageConfig} from 'types/pages';
 import {navigate} from 'utils/navigation';
 import {useDispatch} from 'react-redux';
-import {createUser, fetchCities} from 'state/user/actions';
+import {createUser, createUserEnded, fetchCities} from 'state/user/actions';
 import {useAppSelector} from 'hooks/redux';
 import {useValidation} from 'react-native-form-validator';
 import {getValidationObject} from 'utils/app/validation';
 import {User} from 'types/entity';
 import {View} from 'elements';
+import {showAlert} from 'utils/app/alert';
 
 const {SIGN_UP: $SU} = STATIC_TEXTS;
 
 type Props = {};
 const PageContainer: React.FC<Props> = () => {
-  const {cities, userPending, error} = useAppSelector(state => state.user);
+  const {cities, userPending, error, userCreated} = useAppSelector(
+    state => state.user,
+  );
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
@@ -79,6 +82,21 @@ const PageContainer: React.FC<Props> = () => {
   useEffect(() => {
     dispatch(fetchCities());
   }, []);
+
+  useEffect(() => {
+    if (userCreated)
+      showAlert(
+        'Başarılı',
+        `Kullanıcı kaydınız başarılı bir şekilde yapılmıştır , lütfen giriş yapınız.`,
+        {
+          onPress: () => {
+            navigate(SCREENS.SIGN_IN);
+            dispatch(createUserEnded());
+          },
+          text: 'Tamam',
+        },
+      );
+  }, [userCreated]);
 
   return (
     <Container hideTop hasKeyboard>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ImageBackground} from 'react-native';
 import {
   Container,
@@ -26,7 +26,11 @@ const {SIGN_IN: $SI} = STATIC_TEXTS;
 type Props = {};
 const PageContainer: React.FC<Props> = () => {
   const dispatch = useDispatch();
-  const {userPending, error} = useAppSelector(state => state.user);
+  const {
+    userPending,
+    error,
+    data: userData,
+  } = useAppSelector(state => state.user);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const {validate, isFieldInError, getErrorsInField} = useValidation({
@@ -49,6 +53,10 @@ const PageContainer: React.FC<Props> = () => {
     });
     if (isValid) dispatch(login(email, password));
   };
+
+  useEffect(() => {
+    if (userData) navigate(SCREENS.HOME);
+  }, [userData]);
 
   return (
     <Container hideTop>

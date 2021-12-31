@@ -1,4 +1,5 @@
 import {
+  CREATE_USER_ENDED,
   CREATE_USER_FULFILLED,
   CREATE_USER_REJECTED,
   FETCH_CITIES as FETCH_CITIES_FULFILLED,
@@ -14,6 +15,7 @@ const initialState = {
   userPending: false,
   data: null,
   cities: null,
+  userCreated: false,
 };
 
 export const UserReducer = (state = initialState, action: AnyAction) => {
@@ -55,11 +57,18 @@ export const UserReducer = (state = initialState, action: AnyAction) => {
         ...state,
         userPending: false,
         error: payload?.response?.data?.message,
+        userCreated: false,
       };
     case CREATE_USER_FULFILLED:
       return {
         ...state,
         userPending: false,
+        userCreated: true,
+      };
+    case CREATE_USER_ENDED:
+      return {
+        ...state,
+        userCreated: false,
       };
     default:
       return state;
