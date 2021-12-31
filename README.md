@@ -1,6 +1,6 @@
 ## Pet Finder Application
 
-- A sample **React Native** application that can help to donate a pet or adopt.
+A sample **React Native** application that can help to donate a pet or adopt.
 
 ![app-desing-1](https://fv9-3.failiem.lv/thumb_show.php?i=g8sbu6k6q&view)
 ---
