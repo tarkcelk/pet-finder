@@ -1,7 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {Text, View} from 'elements';
 import {Button, Container, Header, Spinner} from 'components';
-// import {Pets} from 'components/shared';
 import {Pets} from 'components/shared';
 import {SCREENS} from 'consts';
 import {PageConfig} from 'types/pages';
