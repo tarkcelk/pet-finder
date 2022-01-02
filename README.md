@@ -1,6 +1,7 @@
 ## Pet Finder Application
 
 A sample **React Native** application that can help to donate a pet or adopt.
+This project consumer of [**pet-finder-api**](https://github.com/tarkcelk/pet-finder-api) rest api service.For full fledged work must clone both repos and run locally.
 
 ![app-desing-1](https://fv9-3.failiem.lv/thumb_show.php?i=g8sbu6k6q&view)
 ---
@@ -8,10 +9,10 @@ A sample **React Native** application that can help to donate a pet or adopt.
 
 ### Application is about
 ---
-- Pets adoption and donation.
+- Pet adoption and donation.
 - Users can adopt a pet via searching or filtering that way they can find their wished pets. 
-- Users must be register on application if they want to donate , on adoption they don't have to be registered.
-- Users can add their liked pets to favorites to see later , they can see published pets and change the status by their wish.
+- Users must be registered on application if they want to donate , on adoption they don't have to be registered.
+- Users can add their liked pets to favorites to see later , they can see published pets and change their status by their wish.
 
 
 ### Utilities
