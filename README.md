@@ -3,9 +3,9 @@
 A sample **React Native** application that can help to donate a pet or adopt.
 This project consumer of [**pet-finder-api**](https://github.com/tarkcelk/pet-finder-api) rest api service.For full fledged work must clone both repos and run locally.
 
-![app-desing-1](https://fv9-3.failiem.lv/thumb_show.php?i=g8sbu6k6q&view)
+![app-desing-1](https://raw.githubusercontent.com/tarkcelk/pet-finder/master/src/assets/overview/sample-1.PNG)
 ---
-![app-desing-1](https://fv9-4.failiem.lv/thumb_show.php?i=j39ncucfa&view)
+![app-desing-1](https://raw.githubusercontent.com/tarkcelk/pet-finder/master/src/assets/overview/sample-2.PNG)
 
 ### Application is about
 ---
@@ -30,4 +30,6 @@ This project consumer of [**pet-finder-api**](https://github.com/tarkcelk/pet-fi
 ### How to run locally
 ---
 - yarn install
-- cd ios && pod install
+- [iOS] cd ios && pod install
+- [iOS] yarn ios
+- [android] yarn android
