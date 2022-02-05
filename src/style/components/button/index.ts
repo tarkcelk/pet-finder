@@ -4,7 +4,6 @@ export default StyleSheet.create({
   button: {
     backgroundColor: 'rgba(140, 197, 231, 0.8)',
     padding: 15,
-    paddingVertical: 30,
     marginTop: 10,
     width: '75%',
     alignSelf: 'center',
@@ -15,7 +14,7 @@ export default StyleSheet.create({
     alignContent: 'space-between',
   },
   text: {
-    fontSize: 25,
+    fontSize: 20,
     color: '#000',
     fontWeight: 'bold',
   },

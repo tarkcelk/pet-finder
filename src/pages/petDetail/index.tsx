@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {SCREENS} from 'consts';
 import {PageConfig} from 'types/pages';
-import {Container, Spinner} from 'components';
+import {Container, Header, Spinner} from 'components';
 import {$PS_PetDetail} from 'style/pages';
 import {View} from 'elements';
 import {Detail, Image} from './views';
@@ -32,7 +32,8 @@ const PageContainer: React.FC<Props> = () => {
   };
 
   return (
-    <Container hideTop>
+    <Container>
+      <Header />
       <View style={$PS_PetDetail.container}>
         <Image data={detail} />
         <Detail data={detail} handleAddToFavorites={handleAddToFavorites} />

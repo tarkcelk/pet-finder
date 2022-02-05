@@ -1,5 +1,7 @@
 import {Dimensions, StyleSheet} from 'react-native';
 
+const { height: deviceHeight } = Dimensions.get('window');
+
 export default StyleSheet.create({
   container: {
     flex: 1,
@@ -7,7 +9,7 @@ export default StyleSheet.create({
     backgroundColor: '#fff',
   },
   petImageContainer: {
-    height: Dimensions.get('window').height / 2,
+    height: deviceHeight / 2,
   },
   petImage: {
     width: '100%',
@@ -26,14 +28,14 @@ export default StyleSheet.create({
     bottom: 0,
     backgroundColor: '#fff',
     width: '100%',
-    height: '55%',
+    height: deviceHeight / 2,
   },
   petDetailTop: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   petDetailContentHeader: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: '900',
     color: '#000',
   },
@@ -41,10 +43,11 @@ export default StyleSheet.create({
     fontSize: 16,
     color: '#676767',
     fontWeight: 'bold',
-    marginVertical: 10,
+    marginVertical: 5,
   },
   petDetailBottomContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom: 20,
   },
 });

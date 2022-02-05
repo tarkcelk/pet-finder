@@ -1,4 +1,4 @@
-const API_URL: string = 'http://192.168.1.4:3000/';
+const API_URL: string = 'http://192.168.1.3:3000/';
 export const BASE_URL: string = `${API_URL}api`;
 export const BASE_IMAGE_URL: string = `${API_URL}`;
 export const $U_User = {

@@ -20,8 +20,9 @@ const Header: React.FC<Props> = ({
 }) => {
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
+  
   return (
-    <View style={[$S_Header.container, hideTop && {paddingTop: insets.top}]}>
+    <View style={[$S_Header.container, hideTop && {marginTop: insets.top}]}>
       <View style={[$S_Header.left]}>
         <Button
           icon={navigation.canGoBack() && !showDrawer ? 'angle-left' : 'bars'}

@@ -5,5 +5,15 @@ import Icon from './icon';
 import ScrollView from './scrollView';
 import Picker from '../components/picker';
 import Modal from './modal';
+import ImageBackground from './imageBackground';
 
-export {Text, View, TextInput, Icon, ScrollView, Picker, Modal};
+export {
+  Text,
+  View,
+  TextInput,
+  Icon,
+  ScrollView,
+  Picker,
+  Modal,
+  ImageBackground,
+};

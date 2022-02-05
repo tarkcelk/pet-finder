@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {ImageBackground} from 'react-native';
 import {
   Container,
   Input,
@@ -8,11 +7,10 @@ import {
   Validation,
   Header,
 } from 'components';
-import {Picker} from 'elements';
+import {Picker, ImageBackground, View} from 'elements';
 import {STATIC_TEXTS, SCREENS} from 'consts';
 import {$S_ImageBackground} from 'style/elements';
 import {$S_Button} from 'style/components';
-import {$PS_SignIn} from 'style/pages';
 import {PageConfig} from 'types/pages';
 import {navigate} from 'utils/navigation';
 import {useDispatch} from 'react-redux';
@@ -21,7 +19,6 @@ import {useAppSelector} from 'hooks/redux';
 import {useValidation} from 'react-native-form-validator';
 import {getValidationObject} from 'utils/app/validation';
 import {User} from 'types/entity';
-import {View} from 'elements';
 import {showAlert} from 'utils/app/alert';
 
 const {SIGN_UP: $SU} = STATIC_TEXTS;
@@ -53,8 +50,6 @@ const PageContainer: React.FC<Props> = () => {
   });
 
   const validationMethods = {isFieldInError, getErrorsInField};
-
-  const redirectToSignIn = () => navigate(SCREENS.SIGN_IN);
 
   const handleSignup = () => {
     const isValid = validate({
@@ -152,13 +147,6 @@ const PageContainer: React.FC<Props> = () => {
             onPress={handleSignup}
           />
         </View>
-        <Button
-          style={$PS_SignIn.signUpButton}
-          titleStyle={$PS_SignIn.signUpButtonText}
-          title={$SU.SIGN_IN}
-          onPress={redirectToSignIn}
-          noDefaultStyle
-        />
         <Spinner visible={userPending} />
       </ImageBackground>
     </Container>

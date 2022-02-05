@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {ScrollView, Picker} from 'elements';
+import {ScrollView, Picker, ImageBackground} from 'elements';
 import {
   Button,
   Container,
@@ -10,7 +10,6 @@ import {
 } from 'components';
 import {SCREENS} from 'consts';
 import {PageConfig} from 'types/pages';
-import {ImageBackground} from 'react-native';
 import {$PS_Publish} from 'style/pages';
 import {Asset} from 'react-native-image-picker';
 import {useValidation} from 'react-native-form-validator';

@@ -19,11 +19,12 @@ const Container: React.FC<Props> = ({
 
   return (
     <SafeAreaView
-      edges={['bottom', 'left', 'right']}
+      edges={['left', 'right']}
       style={[
         {
           flex: 1,
           top: hideTop ? 0 : insets.top,
+          marginBottom: hideTop ? 0 : insets.bottom,
         },
         style,
       ]}>

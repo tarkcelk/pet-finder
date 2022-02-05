@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {ImageBackground} from 'react-native';
 import {
   Container,
   Input,
@@ -19,7 +18,7 @@ import {login} from 'state/user/actions';
 import {useValidation} from 'react-native-form-validator';
 import {getValidationObject} from 'utils/app/validation';
 import {useAppSelector} from 'hooks/redux';
-import {View} from 'elements';
+import {View, ImageBackground} from 'elements';
 
 const {SIGN_IN: $SI} = STATIC_TEXTS;
 

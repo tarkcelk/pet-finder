@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import {$PS_PetDetail} from 'style/pages';
 import {View} from 'elements';
-import {Button, Modal, Header} from 'components';
+import {Button, Modal} from 'components';
 import {PetDto} from 'types/entity/pet';
 import {BASE_IMAGE_URL} from 'consts/urls';
 
@@ -26,7 +26,6 @@ const Image: React.FC<Props> = ({data}) => {
               : require('assets/images/landing-pet.png')
           }
           style={$PS_PetDetail.petImage}>
-          <Header hideTop />
         </NativeImageBackground>
       </Button>
 

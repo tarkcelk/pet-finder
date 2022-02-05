@@ -4,7 +4,7 @@ export default StyleSheet.create({
   container: {
     width: '75%',
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
-    paddingVertical: 10,
+    paddingVertical: 20,
     paddingHorizontal: 15,
     alignSelf: 'center',
     marginVertical: 5,
@@ -16,6 +16,5 @@ export default StyleSheet.create({
   },
   iconContainer: {
     position: 'absolute',
-    top: 10,
   },
 });
