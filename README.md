@@ -26,6 +26,14 @@ This project consumer of [**pet-finder-api**](https://github.com/tarkcelk/pet-fi
 - **react-native-picker** for selecting an item from picker.
 - **react-native-vector-icons** for icons.
 
+### Environment
+---
+- React Native - 0.66.3
+- TypeScript
+- React - 17.0.2
+- Xcode - 12.5
+- Android API Level - 30 , Min SDK - 21
+- iOS Min Deployment Target - 11 
 
 ### How to run locally
 ---
